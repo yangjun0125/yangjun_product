@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.yangjun.cms.dao.JiagongMapper">
+  		<insert id="insert">
+	  		insert into jiagong values(null,#{lid},#{created},#{zname},#{pname},#{pid},
+	  		#{price},#{num},#{numprice},#{content},#{sid},#{sname},#{screated},#{sprice},#{snumprice},
+	  		#{fname},#{pic},#{fjname},#{tname},#{fprice},#{fnumprice},#{deadate},#{fqname},
+	  		#{fbname},#{fbname2},#{bz})
+	  		where lid like "%${lid}%"
+	  		and zid like "%${zid}%"
+	  		and content like "%${content}%"
+	  		and bz like "%${bz}%"
+  		</insert>
+  		
+  		<select id="selects" resultType="jiagong">
+  			select * from jiagong 
+  		</select>
+  		
+  		
+  		<select id="selectsbyid" resultType="jiagong">
+  			select * from jiagong where id=#{id} 
+  		</select>
+  		
+  		<update id="update">
+  			update jiagong set lid=#{lid},created=#{created},zname=#{zname},
+  			pname=#{pname},pid=#{pid},
+	  		price=#{price},num=#{num},numprice=#{numprice},content=#{content},sid=#{sid},sname=#{sname},screated=#{screated},
+	  		sprice=#{sprice},snumprice=#{snumprice},
+	  		fname=#{fname},pic=#{pic},fjname=#{fjname},tname=#{tname},fprice=#{fprice},fnumprice=#{fnumprice},
+	  		deadate=#{deadate},fqname=#{fqname},
+	  		bname=#{fbname},fbnmame2=#{fbname2},bz=#{bz})
+	  		where id=#{id}
+  		</update>
+  </mapper>
